@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        width: 100%;
+        padding: 1.25rem 0.5rem;
+        margin: 2px;
+        border: 0;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      #calculator {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        padding: 0.25rem 0;
+      }
+      #display, #keypad {
+        width: 95%;
+      }
+      #display {
+        height: 60px;
+        margin: 2px;
+        background-color: #b2b9b7;
+        border-radius: 5px;
+      }
+      .row {
+        display: flex;
+      }
+      .row:last-child button {
+        width: 25%;
+      }
+      .row:last-child button:first-child {
+        width: 50%;
+      }
+      .bg-blue {
+        background-color: dodgerblue;
+      }
+      .bg-green {
+        background-color: #217C7E;
+      }
+      .bg-orange {
+        background-color: #FF8F1F;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="display">
+      </div>
+      <div id="keypad">
+        <div class="row">
+          <button class="bg-blue">AC</button>
+          <button class="bg-blue">+/-</button>
+          <button class="bg-blue">%</button>
+          <button class="bg-orange">/</button>
+        </div>
+        <div class="row">
+          <button class="bg-green">7</button>
+          <button class="bg-green">8</button>
+          <button class="bg-green">9</button>
+          <button class="bg-orange">*</button>
+        </div>
+        <div class="row">
+          <button class="bg-green">4</button>
+          <button class="bg-green">5</button>
+          <button class="bg-green">6</button>
+          <button class="bg-orange">-</button>
+        </div>
+        <div class="row">
+          <button class="bg-green">1</button>
+          <button class="bg-green">2</button>
+          <button class="bg-green">3</button>
+          <button class="bg-orange">+</button>
+        </div>
+        <div class="row">
+          <button class="bg-green">0</button>
+          <button class="bg-green">.</button>
+          <button class="bg-orange">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
