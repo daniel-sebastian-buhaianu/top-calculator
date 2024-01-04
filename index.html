@@ -21,12 +21,20 @@
       }
       #calculator {
         width: 100%;
+        margin-top: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: black;
         padding: 0.25rem 0;
+      }
+      @media only screen and (min-width: 351px) {
+        #calculator {
+          width: 350px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
       #display, #keypad {
         width: 95%;
