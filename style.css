@@ -8,20 +8,21 @@ button {
   margin: 2px;
   border: 0;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 button:hover {
   cursor: pointer;
 }
 #calculator {
   width: 100%;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  margin-top: 2rem;
   padding: 0.25rem 0;
+  border-radius: 10px;
+  background-color: black;
 }
 @media only screen and (min-width: 351px) {
   #calculator {
@@ -34,12 +35,14 @@ button:hover {
   width: 95%;
 }
 #display {
-  height: 60px;
   margin: 2px;
-  background-color: #b2b9b7;
   border-radius: 5px;
+  background-color: white;
 }
-#display p {
+#result {
+  font-size: 2rem;
+  float: right;
+  padding: 5px;
 }
 .row {
   display: flex;
@@ -47,15 +50,19 @@ button:hover {
 .row:last-child button {
   width: 25%;
 }
+.row button {
+  background-color: white;
+}
+.row button:last-child {
+  background-color: orange;
+}
 .row:last-child button:first-child {
   width: 50%;
 }
-.bg-blue {
-  background-color: dodgerblue;
+.row:first-child button {
+  background-color: lightblue;
 }
-.bg-green {
-  background-color: #217C7E;
+.row:first-child button:last-child {
+  background-color: orange;
 }
-.bg-orange {
-  background-color: #FF8F1F;
-}
+
