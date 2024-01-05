@@ -3,71 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      button {
-        width: 100%;
-        padding: 1.25rem 0.5rem;
-        margin: 2px;
-        border: 0;
-        border-radius: 5px;
-        font-size: 1rem;
-      }
-      button:hover {
-        cursor: pointer;
-      }
-      #calculator {
-        width: 100%;
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        padding: 0.25rem 0;
-      }
-      @media only screen and (min-width: 351px) {
-        #calculator {
-          width: 350px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-      #display, #keypad {
-        width: 95%;
-      }
-      #display {
-        height: 60px;
-        margin: 2px;
-        background-color: #b2b9b7;
-        border-radius: 5px;
-      }
-      .row {
-        display: flex;
-      }
-      .row:last-child button {
-        width: 25%;
-      }
-      .row:last-child button:first-child {
-        width: 50%;
-      }
-      .bg-blue {
-        background-color: dodgerblue;
-      }
-      .bg-green {
-        background-color: #217C7E;
-      }
-      .bg-orange {
-        background-color: #FF8F1F;
-      }
-    </style>
+    <link href="./style.css" rel="stylesheet">
   </head>
   <body>
     <div id="calculator">
       <div id="display">
+        <p>1 + 22</p>
       </div>
       <div id="keypad">
         <div class="row">
