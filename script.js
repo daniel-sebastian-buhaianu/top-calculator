@@ -1,12 +1,37 @@
 const DISPLAY_MAX_CHARS = 15;
 function lastChar(string)
 {
-  return string.charAt(string.length-1);
+  return string.charAt(string.length - 1);
 }
 function calculateResult(string, operator)
 {
-  // TODO
-  console.log('here');
+  const parts = string.split(operator);
+  const firstNumber = parts.length == 2
+                      ? parseFloat(parts[0])
+                      : parseFloat(parts[1]) * (-1);
+  const secondNumber = parseFloat(parts[parts.length - 1]);
+  let result;
+  switch (operator)
+  {
+    case '+':
+      result = firstNumber + secondNumber;
+      break;
+    case '-':
+      result = firstNumber - secondNumber;
+      break;
+    case '*':
+      result = firstNumber * secondNumber;
+      break;
+    case '/':
+      result = firstNumber / secondNumber;
+      break;
+    case '%':
+      result = firstNumber % secondNumber;
+      break;
+    default:
+      result = "NaN";
+  }
+  return result.toString().slice(0, DISPLAY_MAX_CHARS);
 }
 let operator;
 function handleButtonClick() {
@@ -54,7 +79,7 @@ function handleButtonClick() {
     case '=':
       if (operator && lastChar(displayText) != operator
           && lastChar(displayText) != '-')
-        calculateResult(displayText, operator);
+        displayElement.textContent = calculateResult(displayText, operator);
       else
         alert("Please provide a valid expression");
       break;
