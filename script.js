@@ -1,25 +1,72 @@
-const RESULT_MAX_CHARS = 16;
-function isNumeric(string)
+const DISPLAY_MAX_CHARS = 15;
+function lastChar(string)
 {
-  if (typeof string != "string")
-    return 0;
-  if (isNaN(string))
-    return 0;
-  if (isNaN(parseFloat(string)))
-    return 0;
-  return 1;
+  return string.charAt(string.length-1);
 }
+function calculateResult(string, operator)
+{
+  // TODO
+}
+let operator;
 function handleButtonClick() {
-  const result = document.querySelector("#result");
-  if (isNumeric(this.textContent))
+  const displayElement = document.querySelector("#display span");
+  const displayText = displayElement.textContent;
+  const buttonText = this.textContent;
+  switch (buttonText)
   {
-    if (result.textContent == 0)
-      result.textContent = this.textContent;
-    else if (result.textContent.length < RESULT_MAX_CHARS)
-      result.textContent += this.textContent;
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      if (displayText == 0 && !displayText.includes('.'))
+        displayElement.textContent = buttonText;
+      else if (displayText.length < DISPLAY_MAX_CHARS)
+        displayElement.textContent += buttonText;
+      else
+        alert("Reached maximum character limit");
+      break;
+    case "AC":
+      operator = undefined;
+      displayElement.textContent = 0;
+      break;
+    case "+/-":
+      if (!operator)
+        displayElement.textContent = parseFloat(displayText)*(-1);
+      break;
+    case '.':
+      if (operator)
+      {
+        const parts = displayText.split(operator);
+        const secondNumber = parts[parts.length-1];
+        if (secondNumber != "" && !secondNumber.includes('.'))
+          displayElement.textContent += '.';
+      }
+      else if (!displayText.includes('.'))
+        displayElement.textContent += '.';
+      break;
+    case '=':
+      if (operator && lastChar(displayText) != operator)
+        calculateResult(displayText, operator);
+      break;
+    default:
+      if (operator)
+      {
+        if ((operator == '%' || operator == '/' || operator == '*')
+            && lastChar(displayText) == operator && buttonText == '-')
+          displayElement.textContent += buttonText;
+      }
+      else
+      {
+        displayElement.textContent += buttonText;
+        operator = buttonText;
+      }
   }
-  else if (this.textContent == "AC")
-    result.textContent = 0;
 }
 document
   .querySelectorAll("button")

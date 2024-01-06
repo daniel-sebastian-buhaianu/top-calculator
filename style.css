@@ -39,7 +39,7 @@ button:hover {
   border-radius: 5px;
   background-color: white;
 }
-#result {
+#display span {
   font-size: 2rem;
   float: right;
   padding: 5px;
