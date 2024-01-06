@@ -6,6 +6,7 @@ function lastChar(string)
 function calculateResult(string, operator)
 {
   // TODO
+  console.log('here');
 }
 let operator;
 function handleButtonClick() {
@@ -51,8 +52,11 @@ function handleButtonClick() {
         displayElement.textContent += '.';
       break;
     case '=':
-      if (operator && lastChar(displayText) != operator)
+      if (operator && lastChar(displayText) != operator
+          && lastChar(displayText) != '-')
         calculateResult(displayText, operator);
+      else
+        alert("Please provide a valid expression");
       break;
     default:
       if (operator)
